@@ -32,6 +32,6 @@ ansible-playbook -i inventory/netology/hosts.yaml cluster.yml -b -v \
   * cd ~/marchenko-final/selfk8s
 sed -i -E "s#server: https?://[0-9.]+:6443#server: https://$CP1_PUBLIC:6443#g" ~/.kube/config
 
-#№ проверка
+- проверка
 kubectl get nodes -o wide
 kubectl get pods -A
