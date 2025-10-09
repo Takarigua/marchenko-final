@@ -210,5 +210,19 @@
 
 ---
 
+## Этап 5. CI/CD и выкладка демо-сайта
 
-
+- Сделал простой статический сайт (index.html) и добавил свою картинку в screen/hero.png.
+- Написал Dockerfile на базе nginx:stable-alpine: копирую страницу и папку screen/ в образ.
+- Собрал и выложил образ в Docker Hub: takarigua/marchenko-final-web.
+- Настроил GitHub Actions (.github/workflows/docker-cicd.yml): при пуше в main — логинится в Docker Hub, билдит, пушит образ с тегом SHA и обновляет образ в деплойменте app/web.
+- В Kubernetes использую Ingress NGINX (hostNetwork + nip.io), сервис app/web доступен по адресу: [http://app.<MASTER_IP>.nip.io/](http://app.51.250.73.216.nip.io/)
+- Проверил, что CD отрабатывает: меняю index.html → пуш в main → в Actions зелёны
+---
+![Экшен](https://github.com/Takarigua/marchenko-final/blob/7b483129257b86170a45607703755e398addfcaa/screen/%D0%AD%D0%BA%D1%88%D0%B5%D0%BD.png)
+---
+![Докерхаб](https://github.com/Takarigua/marchenko-final/blob/7b483129257b86170a45607703755e398addfcaa/screen/%D0%94%D0%BE%D0%BA%D0%B5%D1%80%D1%85%D0%B0%D0%B1.png)
+---
+![Кластер2](https://github.com/Takarigua/marchenko-final/blob/7b483129257b86170a45607703755e398addfcaa/screen/%D0%9A%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%802.png)
+---
+![Апп2](https://github.com/Takarigua/marchenko-final/blob/d3fdf54b697e747f30cbdb1e80a815ea3d7bd54f/screen/%D0%90%D0%BF%D0%BF2.png)
