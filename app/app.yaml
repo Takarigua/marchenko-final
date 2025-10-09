@@ -3,21 +3,6 @@ kind: Namespace
 metadata:
   name: app
 ---
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: web-index
-  namespace: app
-data:
-  index.html: |
-    <html>
-      <head><title>marchenko-final</title></head>
-      <body>
-        <h1>It works! 🎉</h1>
-        <p>K8s cluster is up. CI/CD coming soon.</p>
-      </body>
-    </html>
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,20 +18,9 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:stable-alpine
+          image: takarigua/marchenko-final-web:latest
           ports:
             - containerPort: 80
-          volumeMounts:
-            - name: html
-              mountPath: /usr/share/nginx/html/index.html
-              subPath: index.html
-      volumes:
-        - name: html
-          configMap:
-            name: web-index
-            items:
-              - key: index.html
-                path: index.html
 ---
 apiVersion: v1
 kind: Service
@@ -70,7 +44,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: app.REPLACE_MASTER_IP.nip.io
+    - host: app.51.250.73.216.nip.io
       http:
         paths:
           - path: /

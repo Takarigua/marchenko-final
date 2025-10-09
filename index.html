@@ -3,9 +3,19 @@
   <head>
     <meta charset="utf-8"/>
     <title>marchenko-final</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 40px; }
+      .wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+      img.hero { max-width: 100%; height: auto; border-radius: 12px; }
+      .muted { color: #666; }
+    </style>
   </head>
   <body>
-    <h1>It works! 🎉</h1>
-    <p>Кластер жив, CI/CD подключён. Образ: takarigua/marchenko-final-web</p>
+    <div class="wrap">
+      <h1>It works! 🎉</h1>
+      <p>Кластер жив, CI/CD подключён. Образ: <code>takarigua/marchenko-final-web</code></p>
+      <img class="hero" src="/screen/hero.png" alt="Project image"/>
+      <p class="muted">Эта картинка лежит в репозитории в папке <code>screen/</code> и упаковывается в Docker-образ.</p>
+    </div>
   </body>
 </html>
