@@ -184,3 +184,11 @@
   - kubectl get pods -A
 ---
 ![ВМ](https://github.com/Takarigua/marchenko-final/blob/66221b2aa582b4dbfc60063867c0c6641cbbd772/screen/%D0%92%D0%9C.png)
+---
+![ансибл](https://github.com/Takarigua/marchenko-final/blob/1949a314f8341589e0ec9f07921e0f3477938572/screen/Ansible.png)
+---
+![поды](https://github.com/Takarigua/marchenko-final/blob/1949a314f8341589e0ec9f07921e0f3477938572/screen/%D0%9F%D0%BE%D0%B4%D1%8B.png)
+
+---
+
+
