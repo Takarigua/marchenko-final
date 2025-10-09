@@ -193,7 +193,22 @@
 
 ## Этап 4: Ingress + Мониторинг + Тестовое приложение
 - Поставил ingress-nginx в k8s как DaemonSet с hostNetwork (экономный вариант без внешнего балансировщика). В итоге 80/443 слушаются на нодах, доступ извне есть.
-
 - Развернул стек мониторинга через Helm-чарт kube-prometheus-stack (Prometheus, Alertmanager, Grafana). Grafana доступна по [https://grafana.<MASTER_IP>.nip.io](https://grafana.51.250.73.216.nip.io) (первичный логин/пароль: admin/admin).
-
 - Задеплоил простое тестовое приложение на nginx, которое отдаёт статическую страницу, доступ по [http://app.<MASTER_IP>.nip.io](http://app.51.250.73.216.nip.io/).
+---
+![Кубконфиг](https://github.com/Takarigua/marchenko-final/blob/c0efd00c6c958b271a1e9fd97b3bff553f01da83/screen/%D0%9A%D1%83%D0%B1%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3.png)
+---
+![Ингресс](https://github.com/Takarigua/marchenko-final/blob/c0efd00c6c958b271a1e9fd97b3bff553f01da83/screen/%D0%98%D0%BD%D0%B3%D1%80%D0%B5%D1%81%D1%81.png)
+---
+![МониторингСтек](https://github.com/Takarigua/marchenko-final/blob/c0efd00c6c958b271a1e9fd97b3bff553f01da83/screen/%D0%9C%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%A1%D1%82%D0%B5%D0%BA.png)
+---
+![Тестприложение](https://github.com/Takarigua/marchenko-final/blob/c0efd00c6c958b271a1e9fd97b3bff553f01da83/screen/%D1%82%D0%B5%D1%81%D1%82-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.png)
+---
+![Графана](https://github.com/Takarigua/marchenko-final/blob/c0efd00c6c958b271a1e9fd97b3bff553f01da83/screen/%D0%93%D1%80%D0%B0%D1%84%D0%B0%D0%BD%D0%B0.png)
+---
+![Апп](https://github.com/Takarigua/marchenko-final/blob/c0efd00c6c958b271a1e9fd97b3bff553f01da83/screen/%D0%90%D0%BF%D0%BF.png)
+
+---
+
+
+
