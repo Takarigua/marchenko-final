@@ -214,7 +214,7 @@
 
 - Сделал простой статический сайт (index.html) и добавил свою картинку в screen/hero.png.
 - Написал Dockerfile на базе nginx:stable-alpine: копирую страницу и папку screen/ в образ.
-- Собрал и выложил образ в Docker Hub: takarigua/marchenko-final-web.
+- Собрал и выложил образ в Docker Hub: [takarigua/marchenko-final-web](https://hub.docker.com/r/takarigua/marchenko-final-web).
 - Настроил GitHub Actions (.github/workflows/docker-cicd.yml): при пуше в main — логинится в Docker Hub, билдит, пушит образ с тегом SHA и обновляет образ в деплойменте app/web.
 - В Kubernetes использую Ingress NGINX (hostNetwork + nip.io), сервис app/web доступен по адресу: [http://app.<MASTER_IP>.nip.io/](http://app.51.250.73.216.nip.io/)
 - Проверил, что CD отрабатывает: меняю index.html → пуш в main → в Actions зелёны
