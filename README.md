@@ -191,4 +191,9 @@
 
 ---
 
+## Этап 4: Ingress + Мониторинг + Тестовое приложение
+- Поставил ingress-nginx в k8s как DaemonSet с hostNetwork (экономный вариант без внешнего балансировщика). В итоге 80/443 слушаются на нодах, доступ извне есть.
 
+- Развернул стек мониторинга через Helm-чарт kube-prometheus-stack (Prometheus, Alertmanager, Grafana). Grafana доступна по [https://grafana.<MASTER_IP>.nip.io](https://grafana.51.250.73.216.nip.io) (первичный логин/пароль: admin/admin).
+
+- Задеплоил простое тестовое приложение на nginx, которое отдаёт статическую страницу, доступ по [http://app.<MASTER_IP>.nip.io](http://app.51.250.73.216.nip.io/).
