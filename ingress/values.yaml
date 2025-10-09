@@ -1,0 +1,17 @@
+controller:
+  kind: DaemonSet
+
+  hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
+
+  daemonset:
+    useHostPort: true
+
+  service:
+    type: ClusterIP
+
+  admissionWebhooks:
+    enabled: false
+
+  metrics:
+    enabled: true

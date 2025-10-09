@@ -1,0 +1,38 @@
+prometheus:
+  prometheusSpec:
+    retention: 2d
+    storageSpec: null
+  service:
+    type: ClusterIP
+
+alertmanager:
+  alertmanagerSpec:
+    storage: {}
+  service:
+    type: ClusterIP
+
+grafana:
+  adminUser: admin
+  adminPassword: admin
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - grafana.REPLACE_MASTER_IP.nip.io
+    path: /
+    pathType: Prefix
+  grafana.ini:
+    server:
+      root_url: "http://grafana.REPLACE_MASTER_IP.nip.io/"
+
+kube-state-metrics:
+  prometheus:
+    monitor:
+      enabled: true
+
+prometheus-node-exporter:
+  prometheus:
+    monitor:
+      enabled: true
