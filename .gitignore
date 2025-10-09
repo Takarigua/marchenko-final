@@ -1,26 +1,23 @@
-# terraform
+# Terraform local/lock/state/cache
 **/.terraform/
 **/.terraform.lock.hcl
 **/terraform.tfstate
 **/terraform.tfstate.*
-**/*.tfvars
-**/*.tfvars.json
 crash.log
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
 
-# kubespray / kubeconfig / артефакты
-kubespray/inventory/*/artifacts/
-.kube/
-*.retry
+# Secrets
+secrets/
+*.pem
+*.key
+*.pub
+*.json
+*.yaml
 
-# secrets
-secrets/*
-!secrets/.gitkeep
+# Kubespray artifacts (если вдруг появятся в репо)
+**/inventory/*/artifacts/
 
-# misc
-*.swp
-*.swo
+# OS/editor
 .DS_Store
+.idea/
+.vscode/
+*.swp
